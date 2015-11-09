@@ -28,5 +28,13 @@ There are various toold available for configuration management and few of them a
 - #####Chef
     Chef is a configuration management tool written in Ruby, and uses a pure Ruby DSL for writing configuration "recipes".       These recipes contain resources that should be put into the declared state. Chef is generally used as a client–server        tool.
 
+- #####Puppet
+    Puppet consists of a custom declarative language to describe system configuration, distributed using the client–server       paradigm, and a library to realize the configuration. The resource abstraction layer enables administrators to describe      the configuration in high-level terms,such as users, services and packages. Puppet will then ensure the server's state       matches the description.
+
+- #####Rex
+    Rex is a remote execution system with integrated configuration management and software deployment capabilities. The admin     provides configuration instructions via so-called Rexfiles. They are written in a small DSL but can also contain             arbitrary Perl.
+
+There are many more configuration management tools available and only few are listed above. To learn more [click here](https://en.wikipedia.org/wiki/Comparison_of_open-source_configuration_management_software)
+
 
 
