@@ -1,7 +1,7 @@
 ## ECLIPSE
 ##Presentation 1
 
-This repository contains the slides of my CSCI 5828 presentation 1 on ECLIPSE IDE.
+This repository contains the slides of our CSCI 5828 presentation 1 on ECLIPSE IDE.
 
 ####Table of Contents:
 
