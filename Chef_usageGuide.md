@@ -44,14 +44,9 @@ The general syntax for creating a cookbook is:
 
 ####**knife cookbook create cookbook_name**
 
-In this case name the cookbook as nginx instead odcookbook_name.
+In this case name the cookbook as nginx instead of cookbook_name.
 
-///////////
-
-Add CreateCookbook1.png
-
-///////////
-
+![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/CreateCookbook1.png "Createcookbook1")
 
 Knife builds a simple structure within our cookbooks directory for our new cookbook. Cookbook structure can viewed by navigating into the cookbooks directory, and into the directory with the cookbook name.
 
@@ -63,21 +58,13 @@ This is the recipe that will be run if you reference the "nginx" recipe. We need
 
 Open the file with any text editor and add the contents as shown in the figure below:
 
-/////////////////////
-
-Add contentsofReceipie.png here
-
-/////////////////////////
+![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/ContentsofRecipie.png "Contents of Receipe")
 
 Plan the actions that need to happen for the Nginx web server to start and run. This is done by configuring "resources". Resources do not describe how to do something; they simply describe what a part of the system should look like when it is complete.
 
 Make sure the software is installed by creating a "package" resource first.
 
-//////////////////
-
-Add Packagecreation.png
-
-/////////////////
+![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/packageCreation.png "PkgCreation")
 
 This little piece of code defines a package resource for Nginx. The first line begins with the type of resource (package) and the name of the resource ('nginx'). The rest is a group of actions and parameters that declare what n to be performed with the resource.
 
@@ -85,22 +72,14 @@ In this resource, set action :install. This line tells Chef that the resource de
 
 After installation of the service, adjust its current state on the node. By default, Ubuntu does not start Nginx after installation, so change that as shown below
 
-//////////////
-
-add Changenode.png
-
-//////////////
+![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/nodechange.png "NodeChange")
 
 Here, resource is of the "service" type. This declares that for the Nginx service component (the part that allows us to manage the server with init or upstart), to start the service right now, and also enable it to start automatically when the machine is restarted.
 
 The final resource that is declared is the actual file that we will be serving. Since this is just a simple file that will not be modifying anything, simply declare the location of the file and tell it where in the cookbook to get the file as shown below.
 
-//////////
+![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/cookbooklocationchange.png%5B.png "CookbookChangeLocation")
 
-Add cookbookchangelocation.png
-
-
-/////////
 
 
 The "mode" line sets the permissions on the file created. In this case, the root user is allowed to read and write permissions and everyone else read permissions.
