@@ -20,19 +20,26 @@
             * Registering and authenticating the node with the Chef server
             * Building node object
             * Synchronizing cookbooks
-            * Compiling the resource collection by loading each of the required cookbooks, including recipes, attributes, and              all other dependencies.
+            * Compiling the resource collection by loading each of the required cookbooks, including recipes, attributes, and all other dependencies.
             * Taking the appropriate and required actions to configure the node
             * Looking for exceptions and notifications, handling each as required
-            * RSA public key-pairs are used to authenticate the chef-client with the Chef server every time a chef-client                  needs access to data that is stored on the Chef server. This prevents any node from accessing data that it                   shouldn’t and it ensures that only nodes that are properly registered with the Chef server can be managed.
+            * RSA public key-pairs are used to authenticate the chef-client with the Chef server every time a chef-client needs access to data that is stored on the Chef server. This prevents any node from accessing data that it shouldn’t and it ensures that only nodes that are properly registered with the Chef server can be managed.
 
 -- Ohai: Ohai is a tool that is used to detect attributes on a node, and then provide these attributes to the chef-client at the start of every chef-client run. Ohai is required by the chef-client and must be present on a node. (Ohai is installed on a node as part of the chef-client install process.)
 
 The types of attributes Ohai collects include:
+ 
  Platform details
+ 
  Network usage
+ 
  Memory usage
+ 
  CPU data
+ 
  Kernel data
+ 
  Host names
+ 
  Fully qualified domain names
 
