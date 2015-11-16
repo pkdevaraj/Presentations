@@ -108,3 +108,49 @@ The "mode" line sets the permissions on the file created. In this case, the root
 Save and close this file.
 
 **Creating the Index file**
+
+We defined a "cookbook_file" resource which should move a file called "index.html" into the document root on the node. So create this file in ''files/default" subdirectory of the cookbook.
+
+Enter the contents as shown below and save it.
+
+/////////////
+
+Add indexfilecontents.png
+
+//////////
+
+
+
+**Creating a Helper Cookbook**
+
+When a node tries to run the cookbook that was created as it is now, chances are, it will fail.
+
+That is because it will attempt to install Nginx from the Ubuntu repositories, and the package database on the node is most likely out-of-date. Usually, run "sudo apt-get update" prior to running package commands.
+
+To address this, create a simple cookbook whose only purpose is to ensure that the package database is updated.
+
+This can be done using the same knife syntax  used before. Create this cookbook "apt":
+
+####**knife cookbook create apt**
+
+Edit the default recipe for the new cookbook.
+
+In this file, declare an "execute" resource. This is simply a way of defining a command that is to run on the node.
+
+//////////////////
+
+aptinstallupdate.png
+
+/////////////////
+
+Now, there are a number of ways that to make sure that this is executed before Nginx cookbook. Add it to the node's run-list before the Nginx cookbook, but it can also be tied into the Nginx cookbook itself.
+
+This is probably the better option because it need not add the "apt" cookbook before the "nginx" cookbook on every node which is configured for Nginx.
+
+So adjust a few things in the Nginx cookbook to make this happen. First, open the Nginx recipe file again:
+
+///////////////////////
+
+add ningxfile.png
+
+/////////////////
