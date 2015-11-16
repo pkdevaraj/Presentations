@@ -14,7 +14,7 @@ The **Files** subdirectory within the cookbook contains any static files that we
 
 ###Getting Started with Chef 
 
-**Installation of CHEF**
+- **Installation of CHEF**
 
 Chef is installed and configured in three main phases: setting up the Chef server, setting up a workstation, and then installing the chef-client on each node that will be under management by Chef.
 
@@ -28,7 +28,7 @@ To install a Chef Client check [here](https://docs.chef.io/install_bootstrap.htm
 
 Chef also has additional features that can be enabled as part of the setup and configuration process. This can be found [here] (https://docs.chef.io/install.html).
 
-**Creation of CookBooks**
+- **Creation of CookBooks**
 
 Let us now create a Simple Cookbook on Ubuntu.
 
@@ -36,13 +36,13 @@ This is be a very simple cookbook that installs and configures the Nginx web ser
 
 To begin, Enter ~/chef-repo directory on the workstation by entering the following command
   
-####**cd ~/chef-repo**
+**cd ~/chef-repo**
 
 Now create a cookbook by using knife. It can be used to perform work on our workstation and also to connect with the Chef server or individual nodes.
 
 The general syntax for creating a cookbook is:
 
-####**knife cookbook create cookbook_name**
+**knife cookbook create cookbook_name**
 
 In this case name the cookbook as nginx instead of cookbook_name.
 
@@ -50,7 +50,7 @@ In this case name the cookbook as nginx instead of cookbook_name.
 
 Knife builds a simple structure within our cookbooks directory for our new cookbook. Cookbook structure can viewed by navigating into the cookbooks directory, and into the directory with the cookbook name.
 
-**Creating a Simple Recipe**
+- **Creating a Simple Recipe**
 
 In the recipes subdirectory, there is a file called default.rb created by default.
 
@@ -80,13 +80,11 @@ The final resource that is declared is the actual file that we will be serving. 
 
 ![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/cookbooklocationchange.png%5B.png "CookbookChangeLocation")
 
-
-
 The "mode" line sets the permissions on the file created. In this case, the root user is allowed to read and write permissions and everyone else read permissions.
 
 Save and close this file.
 
-**Creating the Index file**
+- **Creating the Index file**
 
 We defined a "cookbook_file" resource which should move a file called "index.html" into the document root on the node. So create this file in ''files/default" subdirectory of the cookbook.
 
@@ -94,8 +92,7 @@ Enter the contents as shown below and save it.
 
 ![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/indexfileContent.png "IndexFileContent")
 
-
-**Creating a Helper Cookbook**
+- **Creating a Helper Cookbook**
 
 When a node tries to run the cookbook that was created as it is now, chances are, it will fail.
 
@@ -105,7 +102,7 @@ To address this, create a simple cookbook whose only purpose is to ensure that t
 
 This can be done using the same knife syntax  used before. Create this cookbook "apt":
 
-####**knife cookbook create apt**
+**knife cookbook create apt**
 
 Edit the default recipe for the new cookbook.
 
@@ -128,17 +125,17 @@ Edit the metadata.rb file. This file is checked when the Chef server sends the r
 
 Nginx cookbook now relies on apt cookbook to take care of the package database update.
 
-**Add the Cookbook to your Node**
+- **Add the Cookbook to Node**
 
 Upload them to chef server using the command below.
 
-#####knife cookbook upload apt
+**knife cookbook upload apt**
 
-#####knife cookbook upload nginx
+**knife cookbook upload nginx**
 
 Now, modify the run-list of our nodes typing:
 
-#####knife node edit name_of_node
+**knife node edit name_of_node**
 
 name_of_node here is client1 with contents as shown below
 
@@ -150,9 +147,9 @@ Set the EDITOR environmental variable before this works using the commands below
 
 This is a simple JSON document that describes some aspects of the node where the "run_list" array, is currently empty.
 
-Add Nginx cookbook to that array using the format:
+Add Nginx cookbook to that array using the command:
 
-#####"recipe[name_of_recipe]"
+**"recipe[name_of_recipe]"**
 
 Contents of the file are updated as shown below
 ![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/clientcontentsupdated.png "ClientContentsUpdated")
@@ -161,7 +158,7 @@ Now, SSH into the node and run the Chef client software. This will cause the cli
 
 SSH into the node and then run this:
 
-#####sudo chef-client
+**sudo chef-client**
 
 ![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/SSHResponse.png "SSHResponse")
 
@@ -171,7 +168,7 @@ As you can see, the apt cookbook was sent over and run as well, even though it w
 
 We can verify that this works by going to our node's IP address or domain name:
 
-#####http://node_domain_or_IP
+**http://node_domain_or_IP**
 
 The Response should be something like this.
 
