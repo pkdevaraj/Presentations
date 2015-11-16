@@ -4,7 +4,7 @@ Summing Up
 
 In this presentation, we covered the features and the usage of Configuration management tool - CHEF.
 
-CHEF is a open source Configuration Management tool which is very popular among industries.
+CHEF is an open source Configuration Management tool which is very popular among industries.
 
 Chef is a thin DSL (domain-specific language) built on top of Ruby. This approach allows Chef to provide just enough abstraction to make reasoning about your infrastructure easy. Chef includes a built-in taxonomy of all the basic resources one might configure on a system, plus a defined mechanism to extend that taxonomy using the full power of the Ruby language.
 
