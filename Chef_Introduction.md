@@ -45,6 +45,4 @@ Chef Analytics provides real-time visibility into the processing on the Chef ser
 
 These details are uploaded to the Chef server at the end of the chef-client run. This data is then used to build reports, run rules against the output of audit-mode, generate notifications based on the results of auditing, and visibility into messages which were generated during the chef-client run.
 
-####CHEF WORKSTATIONS
 
-Chef Supermarket is the location in which community cookbooks are created and maintained. Cookbooks that are part of the Chef Supermarket are open to public and is accessible by everyone.The way the community cookbooks are used differs from organization to organization and person to person.
