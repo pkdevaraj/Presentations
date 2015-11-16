@@ -8,27 +8,38 @@
  
  ![alt text](https://github.com/pkdevaraj/Presentations/blob/a20c76968d2be8e27609c46c27c09d27f57a13d5/Chef%20Images/Chef_server.PNG "Chef_Server")
  
-- Components and their Description:
+###Components and their Description:
  
-- Clients: 	The Chef server is accessed primarily by nodes that are under management by Chef, as the chef-client runs occur. It is also accessed by individuals who maintain cookbooks and policy that is stored on the Chef server, typically from a workstation. And also by individual users with credentials to Chef server components, such as the Chef management console.
+**Clients**:
 
-- Load Balancer: Nginx is an open-source HTTP and reverse proxy server that is used as the front-end load balancer for the Chef server. All requests to the Chef server API are routed through Nginx.
+The Chef server is accessed primarily by nodes that are under management by Chef, as the chef-client runs occur. It is also accessed by individuals who maintain cookbooks and policy that is stored on the Chef server, typically from a workstation. And also by individual users with credentials to Chef server components, such as the Chef management console.
 
-- Chef Manage: chef-server-webui is a Ruby on Rails 3.0 application that hosts the web interface for the Chef server.
+**Load Balancer**:
+
+Nginx is an open-source HTTP and reverse proxy server that is used as the front-end load balancer for the Chef server. All requests to the Chef server API are routed through Nginx.
+
+**Chef Manage**:
+
+Chef-server-webui is a Ruby on Rails 3.0 application that hosts the web interface for the Chef server.
 The Chef management console uses the Chef server API for all communication to the Chef server.
 
-- Chef Server: Erchef is a complete rewrite of the core API for the Chef server, which allows it to be faster and more scalable than previous versions. The API itself is still compatible with the original Ruby-based Chef server, which means that cookbooks and recipes that were authored for the Ruby-based Chef server will continue to work on the Erlang-based Chef server. The chef-client is still written in Ruby.
+**Chef Server**:
 
-- Bookshelf: Bookshelf is used to store cookbook content—files, templates, and so on—that have been uploaded to the Chef server as part of a cookbook version. Cookbook content is stored by content checksum. If two different cookbooks or different versions of the same cookbook include the same file or template, Bookshelf will store that file only once. The cookbook content managed by Bookshelf is stored in flat files and is separated from the Chef server and search index repositories.
+Erchef is a complete rewrite of the core API for the Chef server, which allows it to be faster and more scalable than previous versions. The API itself is still compatible with the original Ruby-based Chef server, which means that cookbooks and recipes that were authored for the Ruby-based Chef server will continue to work on the Erlang-based Chef server. The chef-client is still written in Ruby.
+
+**Bookshelf**:
+
+Bookshelf is used to store cookbook content—files, templates, and so on—that have been uploaded to the Chef server as part of a cookbook version. Cookbook content is stored by content checksum. If two different cookbooks or different versions of the same cookbook include the same file or template, Bookshelf will store that file only once. The cookbook content managed by Bookshelf is stored in flat files and is separated from the Chef server and search index repositories.
 All cookbooks are stored in a dedicated repository.
 
-- Message Queues	
+**Message Queues**
+
 Messages are sent to the search index using the following components:
     RabbitMQ is used as the message queue for the Chef server. All items that will be added to the search index repository are first added to a queue.
 
-     chef-expander is used to pull messages from the RabbitMQ queue, process them into the required format, and then post them to chef-solr for indexing.
+     Chef-expander is used to pull messages from the RabbitMQ queue, process them into the required format, and then post them to chef-solr for indexing.
 
-     chef-solr wraps Apache Solr and exposes its REST API for indexing and search.
+     Chef-solr wraps Apache Solr and exposes its REST API for indexing and search.
 
 All messages are added to a dedicated search index repository.
 
