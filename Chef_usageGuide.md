@@ -173,3 +173,8 @@ We can verify that this works by going to our node's IP address or domain name:
 The Response should be something like this.
 
 ![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/finalpingresponse.png "FinalResponse")
+
+[**NEXT**](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef_conclusion.md)   
+
+[**BACK TO CONTENTS**](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef_Readme.md)
+  
