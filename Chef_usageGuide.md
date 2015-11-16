@@ -28,8 +28,29 @@ To install a Chef Client check [here](https://docs.chef.io/install_bootstrap.htm
 
 Chef also has additional features that can be enabled as part of the setup and configuration process. This can be found [here] (https://docs.chef.io/install.html).
 
-Let us now create a Simple Cookbook.
+**Creation of CookBooks**
 
+Let us now create a Simple Cookbook on Ubuntu.
+
+This is be a very simple cookbook that installs and configures the Nginx web server on our node.
+
+To begin, Enter ~/chef-repo directory on the workstation by entering the following command
+  
+####**cd ~/chef-repo**
+
+Now create a cookbook by using knife. It can be used to perform work on our workstation and also to connect with the Chef server or individual nodes.
+
+The general syntax for creating a cookbook is:
+
+####**knife cookbook create cookbook_name**
+
+In this case name the cookbook as nginx instead odcookbook_name.
+
+///////////
+
+Add CreateCookbook1.png
+
+///////////
 
 
 
