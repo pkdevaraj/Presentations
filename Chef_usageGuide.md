@@ -167,3 +167,91 @@ add metadata.png
 Nginx cookbook now relies on apt cookbook to take care of the package database update.
 
 **Add the Cookbook to your Node**
+
+Upload them to chef server using the command below.
+
+#####knife cookbook upload apt
+
+#####knife cookbook upload nginx
+
+Now, modify the run-list of our nodes typing:
+
+#####knife node edit name_of_node
+
+name_of_node here is client1 with contents as shown below
+
+///////////////////////////////
+
+Add clientcontents.png
+
+//////////////////////////////////
+
+Set the EDITOR environmental variable before this works using the commands below
+
+#####export EDITOR=name_of_editor
+
+This is a simple JSON document that describes some aspects of the node where the "run_list" array, is currently empty.
+
+Add Nginx cookbook to that array using the format:
+
+#####"recipe[name_of_recipe]"
+
+Contents of the file are updated as shown below
+
+///////////////////////////////
+
+Add clientcontentsupdated.png
+
+///////////////////////////////
+
+Now, SSH into the node and run the Chef client software. This will cause the client to check into the Chef server. Once it does this, it will see the new run-list that has been assigned it.
+
+SSH into the node and then run this:
+
+#####sudo chef-client
+
+//////////////////////////
+
+add sshresponse.png
+
+///////////////////////////
+
+As you can see, the apt cookbook was sent over and run as well, even though it wasn't in the run-list we created. That is because Chef intelligently resolved dependencies and modified the actual run-list before executing it on the node.
+
+**Note**: There are various methods of ensuring that one cookbook or recipe is run before another. Adding a dependency is only one choice, and other methods may be preferred.
+
+We can verify that this works by going to our node's IP address or domain name:
+
+#####http://node_domain_or_IP
+
+The Response should be something like this.
+
+/////////////////////////
+
+add finalpingresponse.png
+
+////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###This is PRAVEEN
+**Presentation 3 CHEF!**
+
+
+
+
+
+
