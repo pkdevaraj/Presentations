@@ -62,3 +62,7 @@ All messages are added to a dedicated search index repository.
 - Typically, the Chef server does not require a high availability or tiered topology until the number of CCRs/min is higher than 333/min (approximately 10k nodes).
 
 - While synthetic benchmarks should be taken with a grain of salt, as they don’t typically represent real-world performance, internal synthetic benchmarks at Chef have seen a standalone Chef server installed on a c3.2xlarge Amazon Web Services (AWS) instance handle more than 1,000 CCRs/min (30k nodes).
+
+[**NEXT**](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef_Analytics.md)     
+
+[**BACK TO CONTENTS**](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef_Readme.md)
