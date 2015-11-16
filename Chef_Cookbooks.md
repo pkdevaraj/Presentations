@@ -1,14 +1,8 @@
 # Cookbooks
 
-- A cookbook is the fundamental unit of configuration and policy distribution. A cookbook defines a scenario and contains everything that is required to support that scenario like:
+A cookbook is the fundamental unit of configuration and policy distribution. A cookbook defines a scenario and contains everything that is required to support that scenario like:
 
-Recipes that specify the resources to use and the order in which they are to be applied.
-
-Attribute values.
-
-File distributions.
-
-Templates.
+Recipes that specify the resources to use and the order in which they are to be applied. Attribute values -> File distributions ->Templates.
 
 Extensions to Chef, such as libraries, definitions, and custom resources.
 
@@ -16,47 +10,67 @@ The chef-client uses Ruby as its reference language for creating cookbooks and d
 
 ## Components of Cookbooks:
 
-- Attributes:	An attribute can be defined in a cookbook (or a recipe) and then used to override the default settings on a node. When a cookbook is loaded during a chef-client run, these attributes are compared to the attributes that are already present on the node. Attributes that are defined in attribute files are first loaded according to cookbook order. For each cookbook, attributes in the default.rb file are loaded first, and then additional attribute files (if present) are loaded in lexical sort order. When the cookbook attributes take precedence over the default attributes, the chef-client will apply those new settings and values during the chef-client run on the node.
+**Attributes**:
 
-- Recipes	:A recipe is the most fundamental configuration element within the organization. A recipe:
+An attribute can be defined in a cookbook (or a recipe) and then used to override the default settings on a node. When a cookbook is loaded during a chef-client run, these attributes are compared to the attributes that are already present on the node. Attributes that are defined in attribute files are first loaded according to cookbook order. For each cookbook, attributes in the default.rb file are loaded first, and then additional attribute files (if present) are loaded in lexical sort order. When the cookbook attributes take precedence over the default attributes, the chef-client will apply those new settings and values during the chef-client run on the node.
 
-Is authored using Ruby, which is a programming language designed to read and behave in a predictable manner
+**Recipes**:
 
-Is mostly a collection of resources, defined using patterns (resource names, attribute-value pairs, and actions); helper code is added around this using Ruby, when needed
+A recipe is the most fundamental configuration element within the organization. A recipe:
 
-Must define everything that is required to configure part of a system
+- Is authored using Ruby, which is a programming language designed to read and behave in a predictable manner
 
-Must be stored in a cookbook
+- Is mostly a collection of resources, defined using patterns (resource names, attribute-value pairs, and actions); helper code is added around this using Ruby, when needed
 
-May be included in a recipe
+- Must define everything that is required to configure part of a system
 
-May use the results of a search query and read the contents of a data bag (including an encrypted data bag)
+- Must be stored in a cookbook
 
-May have a dependency on one (or more) recipes
+- May be included in a recipe
 
-May tag a node to facilitate the creation of arbitrary groupings
+- May use the results of a search query and read the contents of a data bag (including an encrypted data bag)
 
-Must be added to a run-list before it can be used by the chef-client
+- May have a dependency on one (or more) recipes
 
-Is always executed in the same order as listed in a run-list
+- May tag a node to facilitate the creation of arbitrary groupings
+
+- Must be added to a run-list before it can be used by the chef-client
+
+- Is always executed in the same order as listed in a run-list
 
 The chef-client will run a recipe only when asked. When the chef-client runs the same recipe more than once, the results will be the same system state each time. When a recipe is run against a system, but nothing has changed on either the system or in the recipe, the chef-client won’t change anything.
 
-- Definitions:	A definition is used to create new resources by stringing together one (or more) existing resources.
+**Definitions**:
 
-- Files:	A file distribution is a specific type of resource that tells a cookbook how to distribute files, including by node, by platform, or by file version.
+A definition is used to create new resources by stringing together one (or more) existing resources.
 
-- Libraries:	A library allows the use of arbitrary Ruby code in a cookbook, either as a way to extend the chef-client language or to implement a new class.
+**Files**:
 
-- Custom Resources:	A custom resource is an abstract approach for defining a set of actions and (for each action) a set of properties and validation parameters.
+A file distribution is a specific type of resource that tells a cookbook how to distribute files, including by node, by platform, or by file version.
 
-- Metadata:	A metadata file is used to ensure that each cookbook is correctly deployed to each node.
+**Libraries**:
 
-- Resources and Providers:	A resource is a package, a service, a group of users, and so on. A resource tells the chef-client which provider to use during a chef-client run for various tasks like installing packages, running Ruby code, or accessing directories and file systems. The resource is generic: “install program A” while the provider knows what to do with that process on Debian and Ubuntu and Microsoft Windows. A provider defines the steps that are required to bring that piece of the system into the desired state. The chef-client includes default providers that cover all of the most common scenarios.
+A library allows the use of arbitrary Ruby code in a cookbook, either as a way to extend the chef-client language or to implement a new class.
 
-- Templates:	A template is a file written in markup language that uses Ruby statements to solve complex configuration scenarios.
+**Custom Resources**:
 
-- Cookbook Versions:A cookbook version represents a set of functionality that is different from the cookbook on which it is based. A version may exist for many reasons, such as ensuring the correct use of a third-party component, updating a bug fix, or adding an improvement. A cookbook version is defined using syntax and operators, may be associated with environments, cookbook metadata, and/or run-lists, and may be frozen (to prevent unwanted updates from being made).
+A custom resource is an abstract approach for defining a set of actions and (for each action) a set of properties and validation parameters.
+
+**Metadata**:
+
+A metadata file is used to ensure that each cookbook is correctly deployed to each node.
+
+**Resources and Providers**:
+
+A resource is a package, a service, a group of users, and so on. A resource tells the chef-client which provider to use during a chef-client run for various tasks like installing packages, running Ruby code, or accessing directories and file systems. The resource is generic: “install program A” while the provider knows what to do with that process on Debian and Ubuntu and Microsoft Windows. A provider defines the steps that are required to bring that piece of the system into the desired state. The chef-client includes default providers that cover all of the most common scenarios.
+
+**Templates**:
+
+A template is a file written in markup language that uses Ruby statements to solve complex configuration scenarios.
+
+**Cookbook Versions**:
+
+A cookbook version represents a set of functionality that is different from the cookbook on which it is based. A version may exist for many reasons, such as ensuring the correct use of a third-party component, updating a bug fix, or adding an improvement. A cookbook version is defined using syntax and operators, may be associated with environments, cookbook metadata, and/or run-lists, and may be frozen (to prevent unwanted updates from being made).
 
 A cookbook version is maintained just like a cookbook, with regard to source control, uploading it to the Chef server, and how the chef-client applies that cookbook when configuring nodes.
 
