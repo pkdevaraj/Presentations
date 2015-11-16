@@ -14,12 +14,7 @@ Chef can run in client/server mode or in a standalone configuration named "chef-
 
 #Components of CHEF
 
-/////////////////////////////
-
-Add Image here 
-
-////////////////////
-
+![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/ChefComponents.png "ChefComponents")
 
 The above figure shows the relationships between the various elements of Chef, including the nodes, the server, premium features of the server, and the workstation. These elements together provide the chef-client the information and instructions required do its job.
 
