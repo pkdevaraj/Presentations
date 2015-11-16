@@ -10,7 +10,7 @@ CM is the practice of handling changes systematically in an organized way so tha
 Configuration Management when applied over the life cycle of a system, provides visibility and control of its performance. It verifies if a system performs as intended, and is identified and documented in sufficient detail to support its projected life cycle.
 
 ###Configuration Management Tools
-There are various toold available for configuration management and few of them are listed below.
+There are various tools available for configuration management and few of them are listed below.
 
 - #####Ansible
 
