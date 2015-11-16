@@ -92,12 +92,7 @@ We defined a "cookbook_file" resource which should move a file called "index.htm
 
 Enter the contents as shown below and save it.
 
-/////////////
-
-Add indexfilecontents.png
-
-//////////
-
+![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/indexfileContent.png "IndexFileContent")
 
 
 **Creating a Helper Cookbook**
@@ -116,11 +111,7 @@ Edit the default recipe for the new cookbook.
 
 In this file, declare an "execute" resource. This is simply a way of defining a command that is to run on the node.
 
-//////////////////
-
-aptinstallupdate.png
-
-/////////////////
+![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/aptinstallcontent.png "AptInstallUpdate")
 
 Now, there are a number of ways that to make sure that this is executed before Nginx cookbook. Add it to the node's run-list before the Nginx cookbook, but it can also be tied into the Nginx cookbook itself.
 
@@ -128,20 +119,12 @@ This is probably the better option because it need not add the "apt" cookbook be
 
 So adjust a few things in the Nginx cookbook to make this happen. First, open the Nginx recipe file again add the contens below and save it.
 
-///////////////////////
-
-add ningxfile.png
-
-/////////////////
-
+![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/ningxChanges.png "ningxfilechanges")
 
 Edit the metadata.rb file. This file is checked when the Chef server sends the run-list to the node, to see which other recipes should be added to the run-list.
 
-//////////
 
-add metadata.png
-
-/////////
+![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/metadatacontents.png "metadatafilecontents")
 
 Nginx cookbook now relies on apt cookbook to take care of the package database update.
 
@@ -159,11 +142,7 @@ Now, modify the run-list of our nodes typing:
 
 name_of_node here is client1 with contents as shown below
 
-///////////////////////////////
-
-Add clientcontents.png
-
-//////////////////////////////////
+![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/clientcontents.png "ClientContents")
 
 Set the EDITOR environmental variable before this works using the commands below
 
@@ -176,12 +155,7 @@ Add Nginx cookbook to that array using the format:
 #####"recipe[name_of_recipe]"
 
 Contents of the file are updated as shown below
-
-///////////////////////////////
-
-Add clientcontentsupdated.png
-
-///////////////////////////////
+![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/clientcontentsupdated.png "ClientContentsUpdated")
 
 Now, SSH into the node and run the Chef client software. This will cause the client to check into the Chef server. Once it does this, it will see the new run-list that has been assigned it.
 
@@ -189,11 +163,7 @@ SSH into the node and then run this:
 
 #####sudo chef-client
 
-//////////////////////////
-
-add sshresponse.png
-
-///////////////////////////
+![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/SSHResponse.png "SSHResponse")
 
 As you can see, the apt cookbook was sent over and run as well, even though it wasn't in the run-list we created. That is because Chef intelligently resolved dependencies and modified the actual run-list before executing it on the node.
 
@@ -205,14 +175,4 @@ We can verify that this works by going to our node's IP address or domain name:
 
 The Response should be something like this.
 
-/////////////////////////
-
-add finalpingresponse.png
-
-////////////////////////
-
-
-
-
-
-
+![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/finalpingresponse.png "FinalResponse")
