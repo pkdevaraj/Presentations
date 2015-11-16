@@ -15,6 +15,21 @@ Chef includes tooling like the Chef development kit, encourages integration and 
 
 Some important components of workstations are:
 
+* **Chef Development Kit (Chef DK)**
+
+Chef DK is a package that contains all the development tools you will need when coding Chef. It combines the best of the breed tools developed by Chef community with Chef Client. 
+
+Here are few things that you can do with Chef DK:
+     
+     - Get your cookbook dependencies under control and have a good way of composing the cookbooks you need with the new Berkshelf 3.0
+     - Take advantage of built-in testing with the default lint tool for cookbooks FoodCritic, cookbook unit
+     - Testing framework ChefSpec & the leading integration testing framework for coded infrastructure Test Kitchen
+     - Easily setup and upgrade the Chef Client on your workstation
+
+To install chef development kit follow the instruction [here](https://docs.chef.io/install_dk.html).
+
+
+
 * **Knife**
 
 Knife is a command-line tool that provides an interface between a local chef-repo and the Chef server.
@@ -56,7 +71,23 @@ Editing of metadata should only be done using the metadata.rb file, and then eit
 
 More information on this can be found [here](https://docs.chef.io/config_rb_metadata.html).
 
+* **Kitchen**
 
+Kitchen is used to automatically test cookbook data across any combination of platforms and test suites. This is defined in a .kitchen.yml file using a driver plugin architecture. Supports cookbook testing across many cloud providers and virtualization technologies and also supports all common testing frameworks that are used by the Ruby community.
 
+Check [this](http://kitchen.ci/docs/getting-started/) to get started with kitchen.
+
+* **ChefSpec**
+
+	
+ChefSpec is used to simulate the convergence of resources on a node. This runs the chef-client on a local machine
+using chef-zero or chef-solo. It is an extension of RSpec, a behavior-driven development (BDD) framework for Ruby
+and is one of the fastest way to test resources and recipes.
+
+This is a part of ChefDK and run ChefSpec using the command below in the command line:
+
+$ chef exec rspec
+
+More information on how to use chefspec is listed [here](https://docs.chef.io/chefspec.html).
 
 
