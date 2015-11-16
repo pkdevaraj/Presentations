@@ -1,16 +1,16 @@
 # Cookbooks
 
-- A cookbook is the fundamental unit of configuration and policy distribution. A cookbook defines a scenario and contains everything that is required to support that scenario:
+- A cookbook is the fundamental unit of configuration and policy distribution. A cookbook defines a scenario and contains everything that is required to support that scenario like:
 
-Recipes that specify the resources to use and the order in which they are to be applied
+Recipes that specify the resources to use and the order in which they are to be applied.
 
-Attribute values
+Attribute values.
 
-File distributions
+File distributions.
 
-Templates
+Templates.
 
-Extensions to Chef, such as libraries, definitions, and custom resources
+Extensions to Chef, such as libraries, definitions, and custom resources.
 
 The chef-client uses Ruby as its reference language for creating cookbooks and defining recipes, with an extended DSL for specific resources. The chef-client provides a reasonable set of resources, enough to support many of the most common infrastructure automation scenarios; however, this DSL can also be extended when additional resources and capabilities are required.
 
@@ -18,8 +18,7 @@ The chef-client uses Ruby as its reference language for creating cookbooks and d
 
 - Attributes:	An attribute can be defined in a cookbook (or a recipe) and then used to override the default settings on a node. When a cookbook is loaded during a chef-client run, these attributes are compared to the attributes that are already present on the node. Attributes that are defined in attribute files are first loaded according to cookbook order. For each cookbook, attributes in the default.rb file are loaded first, and then additional attribute files (if present) are loaded in lexical sort order. When the cookbook attributes take precedence over the default attributes, the chef-client will apply those new settings and values during the chef-client run on the node.
 
-- Recipes	
-A recipe is the most fundamental configuration element within the organization. A recipe:
+- Recipes	:A recipe is the most fundamental configuration element within the organization. A recipe:
 
 Is authored using Ruby, which is a programming language designed to read and behave in a predictable manner
 
@@ -53,7 +52,7 @@ The chef-client will run a recipe only when asked. When the chef-client runs the
 
 - Metadata:	A metadata file is used to ensure that each cookbook is correctly deployed to each node.
 
-- Resources and Providers:	A resource is a package, a service, a group of users, and so on. A resource tells the chef-client which provider to use during a chef-client run for various tasks like installing packages, running Ruby code, or accessing directories and file systems. The resource is generic: “install program A” while the provider knows what to do with that process on Debian and Ubuntu and Microsoft Windows. A provider defines the steps that are required to bring that piece of the system into the desired state. The chef-client includes default providers that cover all of the most common scenarios. For the full list of resources that are built-in to the chef-client, see https://docs.chef.io/resources.html.
+- Resources and Providers:	A resource is a package, a service, a group of users, and so on. A resource tells the chef-client which provider to use during a chef-client run for various tasks like installing packages, running Ruby code, or accessing directories and file systems. The resource is generic: “install program A” while the provider knows what to do with that process on Debian and Ubuntu and Microsoft Windows. A provider defines the steps that are required to bring that piece of the system into the desired state. The chef-client includes default providers that cover all of the most common scenarios.
 
 - Templates:	A template is a file written in markup language that uses Ruby statements to solve complex configuration scenarios.
 
