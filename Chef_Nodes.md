@@ -91,3 +91,8 @@ After the node object is rebuilt, all of attributes are compared, and then the n
  An attribute is a specific detail about a node, such as an IP address, a host name, a list of loaded kernel modules, the version(s) of available programming languages that are available, and so on. 
  
 An attribute may be unique to a specific node or it can be identical across every node in the organization. Attributes are most commonly set from a cookbook, by using knife, or are retrieved by Ohai from each node prior to every chef-client run. All attributes are indexed for search on the Chef server.
+
+[**NEXT**](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef_Server.md)     
+
+[**BACK TO CONTENTS**](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef_Readme.md)
+
