@@ -1,8 +1,9 @@
 # CSCI 5828 Foundations of Software Engineering 
 
-#Presentation 3 - Configuration Management Tool - **CHEF**
+#Presentation 3 - Configuration Management Tool - CHEF
 
-This repository contains the slides of our CSCI 5828 presentation 2 on CHEF.
+This repository contains the slides of our CSCI 5828 presentation 3 on CHEF.
+                          by - Praveen Kumar Devaraj (prde1873) and Sharath Vontari (shvo9452)
 
 ####Table of Contents:
 
