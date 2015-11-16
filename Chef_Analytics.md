@@ -10,13 +10,13 @@ The following diagram shows the relationships between the various elements of Ch
 
 - Features and their Descriptions:
 
-- Controls:	A control is an automated test that is built into a cookbook, and then used to test the state of the system for compliance. Compliance can be many things. For example, ensuring that file and directory management meets specific internal IT policies—”Does the file exist?”, “Do the correct users or groups have access to this directory?”. Compliance may also be complex, such as helping to ensure goals defined by large-scale compliance frameworks such as PCI, HIPAA, and Sarbanes-Oxley can be met.
+- Controls:	A control is an automated test that is built into a cookbook, and then used to test the state of the system for accordance with specifications. Accordance can be many things. For example, ensuring that file and directory management meets specific internal IT policies—”Does the file exist?”, “Do the correct users or groups have access to this directory?”. Accordance may also be complex, such as helping to ensure goals defined by large-scale compliance frameworks such as PCI, HIPAA, and Sarbanes-Oxley can be met.
 
 - Audit Mode:	The chef-client may be run in audit-mode. Use audit-mode to evaluate custom rules—also referred to as audits—that are defined in recipes. audit-mode may be run in the following ways:
 
-By itself (i.e. a chef-client run that does not build the resource collection or converge the node)
+By itself (i.e. a chef-client run that does not build the resource collection or converge the node).
 
-As part of the chef-client run, where audit-mode runs after all resources have been converged on the node
+As part of the chef-client run, where audit-mode runs after all resources have been converged on the node.
 
 Each audit is authored within a recipe using the control_group and control methods that are part of the Recipe DSL. Recipes that contain audits are added to the run-list, after which they can be processed by the chef-client. Output will appear in the same location as the regular chef-client run (as specified by the log_location setting in the client.rb file).
 
