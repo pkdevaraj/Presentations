@@ -36,4 +36,7 @@ There are various toold available for configuration management and few of them a
 There are many more configuration management tools available and only few are listed above. To learn more [click here](https://en.wikipedia.org/wiki/Comparison_of_open-source_configuration_management_software)
 
 
+[**NEXT**](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef_Introduction.md)     
+
+[**BACK TO CONTENTS**](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef_Readme.md)
 
