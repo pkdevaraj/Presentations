@@ -63,3 +63,8 @@ Chef Analytics includes a powerful rules processing system that allows notificat
 - Resources that were updated as a result of a chef-client run.
 
 Notifications may be sent to any email address, a chat service like HipChat or Slack, or to a webhook-based service for generic intergrations.
+
+
+[**NEXT**](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef_Cookbooks.md)     
+
+[**BACK TO CONTENTS**](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef_Readme.md)
