@@ -1,4 +1,4 @@
-##CHEEF WORKSTATION
+##CHEF WORKSTATION
 
 
 A workstation is a computer that is configured to run various Chef command-line tools that synchronize with a chef-repo, author cookbooks, interact with the Chef server, interact with nodes, or applications like Chef Delivery.
