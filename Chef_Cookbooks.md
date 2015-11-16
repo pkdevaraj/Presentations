@@ -81,3 +81,8 @@ A cookbook version is maintained just like a cookbook, with regard to source con
 - Cookbooks Maintained by Chef:	Chef maintains a collection of cookbooks that are widely used by the community.
 
 - Cookbooks Maintained by the Community:	The community has authored thousands of cookbooks, ranging from niche cookbooks that are used by only a few organizations to cookbooks that are some of the most popular and are used by nearly everyone.
+
+
+[**NEXT**](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef_usageGuide.md)     
+
+[**BACK TO CONTENTS**](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef_Readme.md)
