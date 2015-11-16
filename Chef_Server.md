@@ -1,11 +1,11 @@
-#*Chef Server
+#* Chef Server
 
 - The Chef server acts as a hub for configuration data. The Chef server stores cookbooks, the policies that are applied to nodes, and metadata that describes each registered node that is being managed by the chef-client. Nodes use the chef-client to ask the Chef server for configuration details, such as recipes, templates, and file distributions. The chef-client then does as much of the configuration work as possible on the nodes themselves (and not on the Chef server). This scalable approach distributes the configuration effort throughout the organization.
 
 - The Chef server can scale to the size of any enterprise and is sometimes referred to as Erchef.
 
 - The following diagram shows the various components that are part of a Chef server deployment and how they relate to one another.
-- 
+ 
 - Components and their Description:
  
 - Clients: 	The Chef server is accessed primarily by nodes that are under management by Chef, as the chef-client runs occur. It is also accessed by individuals who maintain cookbooks and policy that is stored on the Chef server, typically from a workstation. And also by individual users with credentials to Chef server components, such as the Chef management console.
