@@ -16,7 +16,7 @@ The Chef server is accessed primarily by nodes that are under management by Chef
 
 **Load Balancer**:
 
-Nginx is an open-source HTTP and reverse proxy server that is used as the front-end load balancer for the Chef server. All requests to the Chef server API are routed through Nginx.
+Nginx is an open-source HTTP and reverse proxy server that is used as front-end load balancer for the Chef server. All requests to the Chef server API are routed through Nginx.
 
 **Chef Manage**:
 
