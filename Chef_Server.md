@@ -5,7 +5,7 @@
 - The Chef server can scale to the size of any enterprise and is sometimes referred to as Erchef.
 
 - The following diagram shows the various components that are part of a Chef server deployment and how they relate to one another.
-- 
+ 
  ![alt text](https://github.com/pkdevaraj/Presentations/blob/a20c76968d2be8e27609c46c27c09d27f57a13d5/Chef%20Images/Chef_server.PNG "Chef_Server")
  
 - Components and their Description:
