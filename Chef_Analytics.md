@@ -24,15 +24,15 @@ Finished audits are reported back to the Chef server. From there, audits are sen
 
 - Chef Actions: The Chef server gathers a lot of data. For example:
 
-Changes made to each node object
+Changes made to each node object.
 
-The run history for all nodes
+The run history for all nodes.
 
-The history of every cookbook (and cookbook version)
+The history of every cookbook (and cookbook version).
 
-How and where policy settings—roles, environments, and data bags—are applied
+How and where policy settings—roles, environments, and data bags—are applied.
 
-Which users made which changes
+Which users made which changes.
 
 The Chef Analytics server collects all of this data and makes it visible from the Chef Analytics user interface.
 
@@ -42,14 +42,14 @@ Chef reporting data is collected during the chef-client run and the results are 
 
 - Rules: Chef Analytics includes a powerful rules processing system that allows notifications to be generated based on observed events in the data stream, such as:
 
-Cookbook uploads
+Cookbook uploads.
 
-Modifications to environments
+Modifications to environments.
 
-Machines on which chef-client runs have failed
+Machines on which chef-client runs have failed.
 
-Machines on which audit-mode runs have failed
+Machines on which audit-mode runs have failed.
 
-Resources that were updated as a result of a chef-client run
+Resources that were updated as a result of a chef-client run.
 
 Notifications may be sent to any email address, a chat service like HipChat or Slack, or to a webhook-based service for generic intergrations.
