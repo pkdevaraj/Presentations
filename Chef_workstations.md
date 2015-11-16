@@ -40,6 +40,7 @@ The directory structure within the chef-repo varies. Some organizations prefer t
 More information on this can be found [here](https://docs.chef.io/chef_repo.html).
 
 * **Knife.rb**
+
 A Knife.rb file is used to specify the chef-repo-specific configuration details for knife.
 This file is loaded every time this executable is run.The default location in which knife expects to find this file is ~/chef-repo/.chef/knife.rb. When a knife.rb file is present in this directory, the settings contained within that file will override the default configuration settings.
 
