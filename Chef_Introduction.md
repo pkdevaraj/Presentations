@@ -16,9 +16,9 @@ Chef can run in client/server mode or in a standalone configuration named "chef-
 
 ![alt text](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef%20Images/ChefComponents.png "ChefComponents")
 
-The above figure shows the relationships between the various elements of Chef, including the nodes, the server, premium features of the server, and the workstation. These elements together provide the chef-client the information and instructions required do its job.
+The above figure shows the relationships between the various elements of Chef, including the nodes, the server, premium features of the server, and the workstation. These elements together provide the chef-client the information and instructions required to do its job.
 
-Components of Chef include the following
+Components of Chef include the following:
 
 #####WORKSTATIONS
 One (or more) workstations are configured to allow users to write, test and manage cookbooks.
