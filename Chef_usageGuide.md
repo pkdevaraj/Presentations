@@ -147,10 +147,23 @@ Now, there are a number of ways that to make sure that this is executed before N
 
 This is probably the better option because it need not add the "apt" cookbook before the "nginx" cookbook on every node which is configured for Nginx.
 
-So adjust a few things in the Nginx cookbook to make this happen. First, open the Nginx recipe file again:
+So adjust a few things in the Nginx cookbook to make this happen. First, open the Nginx recipe file again add the contens below and save it.
 
 ///////////////////////
 
 add ningxfile.png
 
 /////////////////
+
+
+Edit the metadata.rb file. This file is checked when the Chef server sends the run-list to the node, to see which other recipes should be added to the run-list.
+
+//////////
+
+add metadata.png
+
+/////////
+
+Nginx cookbook now relies on apt cookbook to take care of the package database update.
+
+**Add the Cookbook to your Node**
