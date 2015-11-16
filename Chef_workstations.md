@@ -90,4 +90,7 @@ $ chef exec rspec
 
 More information on how to use chefspec is listed [here](https://docs.chef.io/chefspec.html).
 
+[**NEXT**](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef_Nodes.md)     
+
+[**BACK TO CONTENTS**](https://github.com/pkdevaraj/Presentations/blob/gh-pages/Chef_Readme.md)
 
